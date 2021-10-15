@@ -5,6 +5,9 @@
   "repository": "https://github.com/Atanazio01/mycontacts.git",
   "author": "Atanazio01 <marcosd.atanazio@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },

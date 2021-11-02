@@ -56,6 +56,19 @@ class CategoryController {
 
     response.json(category);
   }
+
+  async delete(request, response) {
+    const { id } = request.params;
+    const category = await CategoriesRepository.findById(id);
+
+    if (!category) {
+      return response.status(404).json({ error: 'Category not found' });
+    }
+
+    await CategoriesRepository.delete(id);
+
+    response.sendStatus(204);
+  }
 }
 
 module.exports = new CategoryController();

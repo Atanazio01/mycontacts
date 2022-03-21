@@ -50,9 +50,9 @@ class ContactsRepository {
   }
 
   async delete(id) {
-    // operações de delete retorna uma row vazia
+    // operações de delete retornam uma row vazia
     // row = []
-    const deleteOp = db.query('DELETE FROM contacts WHERE id = $1', [id]);
+    const deleteOp = await db.query('DELETE FROM contacts WHERE id = $1', [id]);
     return deleteOp;
   }
 }
